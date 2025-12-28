@@ -10,14 +10,6 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-    /* * SENSOR DEFINITION (CRITICAL FIX) 
-     * This block enables the Right Encoder to talk to the Left Master.
-     */
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
