@@ -21,7 +21,7 @@
 // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   [   |   |   ]   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                     | ALT  | GUI  | LOWER|  SPACE |   | BSPC  | RAISE| ENTER |  FN   |
-            bindings = <
+            bindings = 
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp MINUS
 &kp LCTRL &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
@@ -29,37 +29,24 @@
                         &kp LALT &kp LGUI &mo 1  &kp SPACE  &kp BSPC &mo 2  &kp RET  &mo 3
             >;
 
-            /* ENCODERS: Left = PgUp/Dn (Logs), Right = Undo/Redo (Code) */
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            /* RIGHT ENCODER: Volume */
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |       |     |     |      |      |      |                   |      |   [   |   ]   |      |       |   |   |
-// |       |     |     |      |      |      |       |   |       |      |       |   [   |   ]  |   =   |       |
-//                     |      |      |      |       |   |  DEL  |      |       |       |
-            bindings = <
+            bindings = 
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans    &trans    &trans    &trans
 &trans     &trans       &trans       &trans       &trans       &trans                       &trans    &trans    &trans    &trans    &trans    &trans
 &trans     &trans       &trans       &trans       &trans       &trans                       &trans    &kp LBKT  &kp RBKT  &trans    &trans    &kp PIPE
 &trans     &trans       &trans       &trans       &trans       &trans    &trans   &trans    &trans    &trans    &kp LBKT  &kp RBKT  &kp EQUAL &trans
                                      &trans       &trans       &trans    &trans   &kp DEL   &trans    &trans    &trans
             >;
-            
-            /* ENCODERS: Standard Volume & Page Scroll on this layer */
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |       |     |     |      |      |      |                   |      |       |       |      |       |       |
-// |       |     |     |      |      |      |                   |  <-  |   v   |   ^   |  ->  |       |   \   |
-// |       |     |     |      |      |      |       |   |       |  +   |   -   |   {   |   }  |   +   |       |
-//                     |      |      |      |       |   |       |      |       |       |
-            bindings = <
+            bindings = 
 &trans     &trans &trans &trans &trans &trans                       &trans    &trans    &trans    &trans    &trans    &trans
 &trans     &trans &trans &trans &trans &trans                       &trans    &trans    &trans    &trans    &trans    &trans
 &trans     &trans &trans &trans &trans &trans                       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans    &kp BSLH
@@ -67,18 +54,11 @@
                          &trans &trans &trans    &trans   &trans    &trans    &trans    &trans
             >;
 
-            /* ENCODERS: Standard Volume & Page Scroll on this layer */
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |       |
-// |       |     |     |      |      |      |                   |  F11 |  F12  |       |      | PSCRN |       |
-// |       | PREV| NEXT|      |      |      |                   |      |       |       |      |       |       |
-// |       | PLAY| MUTE| VOL- | VOL+ |      |       |   |       |      |       |       |      |       |       |
-//                     |      |      |      |       |   |       |      |       |       |
-            bindings = <
+            bindings = 
 &trans &kp F1     &kp F2     &kp F3       &kp F4       &kp F5                     &kp F6   &kp F7   &kp F8   &kp F9   &kp F10   &trans
 &trans &trans     &trans     &trans       &trans       &trans                     &kp F11  &kp F12  &trans   &trans   &kp PSCRN &trans
 &trans &kp C_PREV &kp C_NEXT &trans       &trans       &trans                     &trans   &trans   &trans   &trans   &trans    &trans
