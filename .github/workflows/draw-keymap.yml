@@ -1,0 +1,31 @@
+name: Draw Keymap
+
+on:
+  push:
+    paths:
+      - 'config/sofle.keymap'
+      - 'keymap_drawer.yaml'
+  workflow_dispatch:
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Draw keymap
+        uses: caksoylar/keymap-drawer@v1.14.0
+        with:
+          keymap_file: config/sofle.keymap
+          config_file: keymap_drawer.yaml
+          output_folder: keymap-drawer
+          parse_args: ''
+          draw_args: ''
+          
+      - name: Commit and push keymap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update keymap diagram [skip ci]'
+          file_pattern: 'keymap-drawer/*'
+
