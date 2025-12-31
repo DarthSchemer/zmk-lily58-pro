@@ -2,20 +2,7 @@ draw_config:
   key_w: 60
   key_h: 56
   split_gap: 30
-  combo_w: 24
-  combo_h: 20
   n_columns: 6
-  separate_combo_diagrams: true
-  inner_pad_w: 2
-  inner_pad_h: 2
-  outer_pad_w: 30
-  outer_pad_h: 30
-
+  
 parse_config:
   skip_binding_parsing: false
-  raw_binding_map: true
-  
-layout:
-  qmk_keyboard: sofle
-  qmk_layout: LAYOUT
-
