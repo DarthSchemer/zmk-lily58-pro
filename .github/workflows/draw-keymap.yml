@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Draw keymap
-        uses: caksoylar/keymap-drawer@v1.14.0
+        uses: caksoylar/keymap-drawer@main
         with:
           keymap_file: config/sofle.keymap
           config_file: keymap_drawer.yaml
