@@ -25,9 +25,12 @@ jobs:
       - name: Create output directory
         run: mkdir -p keymap-drawer
         
-      - name: Draw keymap
-        run: keymap -c keymap_drawer.yaml  draw config/sofle.keymap -o keymap-drawer/sofle.svg
-        
+      - name: Parse keymap to YAML
+        run: keymap -c keymap_drawer.yaml parse -z config/sofle.keymap > keymap-drawer/sofle.yaml
+
+      - name: Draw keymap from YAML
+        run: keymap -c keymap_drawer.yaml draw keymap-drawer/sofle.yaml -o keymap-drawer/sofle.svg
+
       - name: Commit and push keymap
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
