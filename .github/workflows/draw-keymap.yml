@@ -14,15 +14,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Draw keymap
-        uses: caksoylar/keymap-drawer@main
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          keymap_file: config/sofle.keymap
-          config_file: keymap_drawer.yaml
-          output_folder: keymap-drawer
-          parse_args: ''
-          draw_args: ''
+          python-version: '3.11'
           
+      - name: Install keymap-drawer
+        run: pip install keymap-drawer
+        
+      - name: Draw keymap
+        run: keymap draw config/sofle.keymap -c keymap_drawer.yaml -o keymap-drawer/sofle.svg
+        
       - name: Commit and push keymap
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
