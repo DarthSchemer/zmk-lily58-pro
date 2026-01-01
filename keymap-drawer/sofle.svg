@@ -348,11 +348,11 @@ path.combo {
 </a></g>
 <g transform="translate(506, 390) rotate(30.0)" class="key keypos-54">
 <rect rx="6" ry="6" x="-36" y="-54" width="71" height="108" class="key"/>
-<text x="0" y="0" class="key tap">RET</text>
+<text x="0" y="0" class="key tap">SPACE</text>
 </g>
 <g transform="translate(694, 390) rotate(-30.0)" class="key keypos-55">
 <rect rx="6" ry="6" x="-36" y="-54" width="71" height="108" class="key"/>
-<text x="0" y="0" class="key tap">SPACE</text>
+<text x="0" y="0" class="key tap">RET</text>
 </g>
 <g transform="translate(776, 368) rotate(-22.5)" class="key keypos-56">
 <rect rx="6" ry="6" x="-36" y="-36" width="71" height="71" class="key"/>
